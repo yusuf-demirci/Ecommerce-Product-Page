@@ -4,17 +4,24 @@
     box-sizing: border-box;
     font-family: 'Kumbh Sans', sans-serif;
 }
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
 header {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 3%;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
 }
 
 nav {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-right: auto;
     width: 85%;
     gap: 5%;
@@ -27,7 +34,7 @@ li {
     display: inline-block;
     margin-right: 2%;
     padding: 2rem 0;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 a {
     text-decoration: none;
@@ -37,7 +44,59 @@ a {
     width: 2.5rem;
 }
 
+/* Main Body */
 
-/* .images img{
-    width: 300px;
-} */
+main {
+    width: 75%;
+    margin: 4.5rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+.images__big{
+    width: 25rem;
+    border-radius: 10px;
+}
+.sub-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.images__small{
+    width: 5rem;
+    border-radius: 10px;
+}
+.content {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+h1, h4, h6 {
+    font-weight: 700;
+}
+.company {
+    color: hsl(26, 88%, 62%);
+}
+h1 {
+    font-size: 2.4rem;
+    
+}
+h6 {
+    font-size: 14px;
+}
+.definition {
+    font-size: 14px;
+}
+.price {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.discount {
+    display: inline-block;
+    color: hsl(26, 88%, 62%);
+    background-color: hsl(25, 100%, 94%);
+    font-size: 16px;
+    
+}
