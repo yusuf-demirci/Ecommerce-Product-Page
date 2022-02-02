@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+header {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 85%;
+    gap: 5%;
+    /* border: 2px solid black; */
+}
+ul {
+    width: 65%;
+}
+li {
+    display: inline-block;
+    margin-right: 2%;
+    padding: 2rem 0;
+    border: 2px solid black;
+}
+a {
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+.avatar {
+    width: 2.5rem;
+}
+
+
+/* .images img{
+    width: 300px;
+} */
