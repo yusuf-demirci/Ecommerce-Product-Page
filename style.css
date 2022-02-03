@@ -11,8 +11,9 @@ body {
     min-height: 100%;
 }
 header {
-    width: 75%;
-    margin: 0 auto;
+    width: 70%;
+    height: 7rem;
+    margin: -0.5rem auto 0;
     display: flex;
     align-items: center;
     gap: 3%;
@@ -21,27 +22,53 @@ header {
 
 nav {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin-right: auto;
     width: 85%;
     gap: 5%;
-    /* border: 2px solid black; */
+    align-self: stretch;
+}
+.logo:hover {
+    cursor: pointer;
 }
 ul {
     width: 65%;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    height: 100%;
 }
 li {
-    display: inline-block;
+    list-style-type: none;
     margin-right: 2%;
-    padding: 2rem 0;
-    /* border: 2px solid black; */
+    padding: 2.55rem 0;
+    border: 3px solid white;
+}
+li:hover, a:hover {
+    cursor: pointer;
+    border-bottom-color: hsl(26, 100%, 55%);
+    color: black;
 }
 a {
     text-decoration: none;
     color: hsl(219, 9%, 45%);
 }
+.orders {
+    opacity: 0.5;
+}
+.orders:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
 .avatar {
     width: 2.5rem;
+    height: 2.5rem;
+}
+.avatar:hover {
+    cursor: pointer;
+    outline: 2px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
 }
 
 /* Main Body */
@@ -50,10 +77,11 @@ main {
     width: 75%;
     margin: 4.5rem auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 4rem;
 }
 .images__big{
-    width: 25rem;
+    width: 23rem;
     border-radius: 10px;
 }
 .sub-images {
@@ -64,6 +92,9 @@ main {
 .images__small{
     width: 5rem;
     border-radius: 10px;
+}
+.selected {
+    outline: 3px solid hsl(26, 100%, 55%);
 }
 .content {
     width: 25rem;
@@ -76,7 +107,9 @@ h1, h4, h6 {
     font-weight: 700;
 }
 .company {
-    color: hsl(26, 88%, 62%);
+    color: hsl(26, 100%, 55%);
+    opacity: 0.8;
+    margin-bottom: -0.3rem;
 }
 h1 {
     font-size: 2.4rem;
@@ -98,5 +131,54 @@ h6 {
     color: hsl(26, 88%, 62%);
     background-color: hsl(25, 100%, 94%);
     font-size: 16px;
-    
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+}
+.old-price {
+    color: hsl(220, 14%, 75%);
+    text-decoration: line-through;
+    margin-top: -1.2rem;
+}
+.buttons {
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+}
+.button-group {
+    background-color: hsl(223, 64%, 98%);
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.increase, .decrease {
+    font-size: 24px;
+    color: hsl(26, 100%, 55%);
+}
+.add {
+    width: 60%;
+    background-color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+}
+.add img {
+    filter:  brightness(0) invert(1);
+    width: 1rem;
+    vertical-align: baseline;
+    margin-right: 1rem;
+}
+
+.increase:hover, 
+.decrease:hover,
+.add:hover,
+.images__small:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
