@@ -355,8 +355,8 @@ a {
     justify-content: center;
     align-items: center;
     height: 65%;
-    gap: 0.9rem;
-    padding: 0.9rem;
+    gap: 1rem;
+    padding: 0.5rem;
 }
 .cart-info {
     display: flex;
@@ -368,7 +368,7 @@ a {
     border-radius: 5px;
 }
 .cart-text {
-    font-size: 13px;
+    font-size: 12px;
 }
 .cart-text p {
     margin: 0;
