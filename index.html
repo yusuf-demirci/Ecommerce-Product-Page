@@ -14,7 +14,12 @@
   <script src="./index.js" defer></script>
 
   <!-- JQuery -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/97f6f8e3bf.js" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,13 +45,27 @@
         <li>About</li>
         <li>Contact</li>
       </ul>
+      <div class="popup">
+        <svg class="orders" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+            fill="#000" fill-rule="nonzero" />
+        </svg>
+        <div class="popuptext" id="myPopup">
+          Cart
+          <hr>
+          <div class="cart-content">
+            Your cart is empty.
+          </div>
+        </div>
+      </div>
 
-      <svg class="orders" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-          fill="#000" fill-rule="nonzero" />
-      </svg>
+
       <img class="avatar" src="./images/image-avatar.png" alt="avatar">
+      <span class="translate-middle badge rounded-pill bg-danger">
+        0
+      </span>
+
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
         aria-controls="navbarOffcanvasLg">
@@ -63,50 +82,44 @@
   <main>
 
     <section class="images">
-      <img 
-      onclick="openModal();"
-      class="images__big" src="./images/image-product-1.jpg" alt="product">
+      <img onclick="openModal();" class="images__big" src="./images/image-product-1.jpg" alt="product">
       <div class="row">
         <div class="column">
           <img onclick="currentSlide(1)" class="images__small hover-shadow selected"
             src="./images/image-product-1-thumbnail.jpg" alt="product small">
         </div>
         <div class="column">
-          <img onclick="currentSlide(2)" class="images__small hover-shadow"
-            src="./images/image-product-2-thumbnail.jpg" alt="product small">
+          <img onclick="currentSlide(2)" class="images__small hover-shadow" src="./images/image-product-2-thumbnail.jpg"
+            alt="product small">
         </div>
         <div class="column">
-          <img onclick="currentSlide(3)" class="images__small hover-shadow"
-            src="./images/image-product-3-thumbnail.jpg" alt="product small">
+          <img onclick="currentSlide(3)" class="images__small hover-shadow" src="./images/image-product-3-thumbnail.jpg"
+            alt="product small">
         </div>
         <div class="column">
-          <img onclick="currentSlide(4)" class="images__small hover-shadow"
-            src="./images/image-product-4-thumbnail.jpg" alt="product small">
+          <img onclick="currentSlide(4)" class="images__small hover-shadow" src="./images/image-product-4-thumbnail.jpg"
+            alt="product small">
         </div>
       </div>
 
       <!-- The Modal/Lightbox -->
       <div id="myModal" class="modal">
-        <span class="close cursor" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
 
+        <div class="modal-content">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
           <div class="mySlides">
-            <div class="numbertext"></div>
             <img src="./images/image-product-1.jpg" style="width:100%; border-radius: 10px;">
           </div>
 
           <div class="mySlides">
-            <div class="numbertext"></div>
             <img src="./images/image-product-2.jpg" style="width:100%; border-radius: 10px;">
           </div>
 
           <div class="mySlides">
-            <div class="numbertext"></div>
             <img src="./images/image-product-3.jpg" style="width:100%; border-radius: 10px;">
           </div>
 
           <div class="mySlides">
-            <div class="numbertext"></div>
             <img src="./images/image-product-4.jpg" style="width:100%; border-radius: 10px;">
           </div>
 

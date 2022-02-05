@@ -47,13 +47,12 @@ li:hover {
     border-bottom: 3px solid hsl(26, 100%, 55%);
     margin-bottom: -3px;
     opacity: 1;
-    
 }
-
 .orders {
     opacity: 0.5;
     position: absolute;
-    right: 4rem;
+    right: 3.9rem;
+    top: 2rem;
 }
 .orders:hover {
     opacity: 0.7;
@@ -69,6 +68,16 @@ li:hover {
     cursor: pointer;
     outline: 2px solid hsl(26, 100%, 55%);
     border-radius: 50%;
+}
+.badge {
+    padding: 0.1rem 0.3rem;
+    height: 0.7rem;
+    background-color: hsl(26, 100%, 55%) !important;
+    position: absolute;
+    z-index: 4;
+    top: 2rem;
+    right: 3.2rem;
+    font-size: 8px;
 }
 
 /* Main Body */
@@ -86,6 +95,9 @@ main {
 .images__big{
     width: 100%;
     border-radius: 10px;
+}
+.images__big:hover {
+    cursor: pointer;
 }
 .row {
     display: flex;
@@ -124,7 +136,7 @@ h6 {
     font-size: 0.8rem;
 }
 .definition {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 .price {
     display: flex;
@@ -200,7 +212,7 @@ h6 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: hsla(0, 0%, 0%, 0.8);
+    background-color: hsla(0, 0%, 0%, 0.7);
   }
   
   /* Modal Content */
@@ -212,22 +224,21 @@ h6 {
     width: 30rem;
     max-width: 1200px;
     border: none;
-    
   }
   
   /* The Close Button */
   .close {
     color: white;
     position: absolute;
-    top: 10px;
-    right: 25px;
+    top: -8%;
+    right: 0;
     font-size: 35px;
     font-weight: bold;
   }
   
   .close:hover,
   .close:focus {
-    color: #999;
+    color: hsl(26, 100%, 55%);
     text-decoration: none;
     cursor: pointer;
   }
@@ -242,7 +253,7 @@ h6 {
   .next {
     cursor: pointer;
     position: absolute;
-    top: 44%;
+    top: 45%;
     width: 2.7rem;
     height: 2.7rem;
     padding-top: 0.4rem;
@@ -272,37 +283,114 @@ h6 {
     color: hsl(26, 100%, 55%);
   }
   
- 
-  
-  .thumbnails {
-      display: flex;
-      justify-content: center;
-      width: 90%;
-      margin: 1.5rem auto;
-      gap: 1.5rem;
-  }
-  .thumbnail_col {
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 1.5rem auto;
+    gap: 1.5rem;
+}
+.thumbnail_col {
     width: 5rem;
     text-align: center;
     background-color: hsla(0, 0%, 100%, 1);
     border-radius: 10px;
-  }
-  img.demo {
+}
+img.demo {
     width: 100%;
     border-radius: 10px;
-  }
+}
   
-  img.demo:hover{
+img.demo:hover{
     opacity: 0.6;
-  }
+}
   
-  img.hover-shadow {
+img.hover-shadow {
     transition: 0.3s;
-  }
+}
   
-  .hover-shadow:hover {
+.hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Pop-up */
+/* Popup container */
+.popup {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+  height: 200px;
+  background-color: rgb(206, 74, 74);
+  color: #555;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 5rem;
+  right: 0rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    gap: 0.9rem;
+    padding: 0.9rem;
+}
+.cart-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.cart-img {
+    width: 3rem;
+    border-radius: 5px;
+}
+.cart-text {
+    font-size: 13px;
+}
+.cart-text p {
+    margin: 0;
+    padding: 0;
+}
+.cart-text span {
+    font-weight: 900;
+}
+.cart-content button {
+    width: 100%;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
 
 @media screen and (max-width: 991.5px) {
