@@ -22,7 +22,13 @@ nav {
     width: 75%;
     height: 5rem;
     margin: 0 auto;
+    background-color: #FFF;
 }
+.navbar-toggler {
+    border: none;
+    margin-left: -0.7rem;
+}
+
 
 .logo:hover {
     cursor: pointer;
@@ -42,7 +48,24 @@ li {
     color: black;
     opacity: 0.6;
 }
-li:hover {
+.offcanvas {
+    padding: 2rem;
+}
+ol {
+    margin-top: 2rem;
+    padding-left: 0;
+}
+ol li {
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0;
+    margin-bottom: 2rem;
+}
+ol li:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+ul li:hover {
     cursor: pointer;
     border-bottom: 3px solid hsl(26, 100%, 55%);
     margin-bottom: -3px;
@@ -119,6 +142,10 @@ main {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 1rem;
+}
+.content > p {
+    color: hsl(220, 4%, 40%)
 }
 h1, h4, h6 {
     font-weight: 700;
@@ -154,7 +181,7 @@ h6 {
 .old-price {
     color: hsl(220, 14%, 75%);
     text-decoration: line-through;
-    margin-top: -1.2rem;
+    margin-top: 0;
 }
 .buttons {
     display: flex;
@@ -276,6 +303,9 @@ h6 {
     top: 44%;
     right: -1.4rem;
   }
+  .tiny {
+      display: none;
+  }
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
@@ -321,25 +351,28 @@ a {
 /* Popup container */
 .popup {
   display: inline-block;
-  cursor: pointer;
+}
+.popuptext > p {
+    margin-left: 15px;
 }
 
 /* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 300px;
+  width: 325px;
   height: 200px;
-  background-color: rgb(206, 74, 74);
   color: #555;
+  background-color: #FFF;
   text-align: left;
   border-radius: 6px;
   padding: 10px;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 5rem;
   right: 0rem;
   font-weight: 700;
   font-size: 14px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -356,7 +389,7 @@ a {
     align-items: center;
     height: 65%;
     gap: 1rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
 }
 .cart-info {
     display: flex;
@@ -364,21 +397,28 @@ a {
     gap: 1.2rem;
 }
 .cart-img {
-    width: 3rem;
+    width: 2.5rem;
     border-radius: 5px;
 }
 .cart-text {
-    font-size: 12px;
+    font-size: 14px;
 }
 .cart-text p {
     margin: 0;
     padding: 0;
+    font-weight: 100;
+    color: hsl(220, 4%, 40%);
 }
 .cart-text span {
     font-weight: 900;
+    color: #000;
 }
 .cart-content button {
     width: 100%;
+}
+.fas {
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 /* Add animation (fade in the popup) */
@@ -417,5 +457,94 @@ a {
     main {
         width: 41.5rem;
         gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    nav, header {
+        width: 25rem;
+    }
+    main {
+        width: 25rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-content {
+        width: 22rem;
+    }
+    .close { 
+        top: -10%;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .logo {
+        margin-left: -1.8rem;
+    }
+    .orders {
+        right: 3rem;
+    }
+    nav {
+        padding: 0 0.5rem;
+    }
+    header, nav {
+        border: none;
+        width: 100%;
+    }
+    main, .images {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .images__big {
+        border-radius: 0;
+    }
+    .images__big:hover {
+        cursor:default;
+    }
+    .row {
+        display: none;
+    }
+    .tiny {
+        display: block;
+        position: absolute;
+        top: 60%;
+    }
+    .tiny.prev {
+        left: 0.8rem;
+    }
+    .tiny.next {
+        right: 0.8rem;
+    }
+    .prev, .next {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .prices {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .button-group, .add {
+        width: 100%;
+    }
+    .offcanvas {
+        width: 70%;
     }
 }

@@ -1,5 +1,6 @@
 // Open the Modal
 function openModal() {
+  if ($(window).width() <= 500) return;
   $("#myModal").css("display", "block");
   $("header").addClass("ui-state-disabled");
 }
@@ -23,6 +24,7 @@ function currentSlide(n) {
 function showSlides(n) {
   const slides = $(".mySlides");
   const dots = $(".demo");
+  
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
   for (let i = 0; i < slides.length; i++) {
@@ -33,11 +35,17 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active selected";
+  let url = $(".mySlides img")[slideIndex - 1].src
+
+  $(".images__big").attr("src", url);
 }
 
 function addToCart(count) {
   $(".badge").text((+$(".badge").text() + count) + "")
   let orderCount = $(".badge").text();
+
+  if (orderCount == 0) return;
+  $(".badge").show();
 
   const img = $('<img />', {
     class: 'cart-img', src: './images/image-product-1-thumbnail.jpg', alt: 'shoe'
@@ -93,10 +101,27 @@ $(".add").click(() => {
 })
 
 $(".orders").click(() => {
-  var popup = document.getElementById("myPopup");
+  let popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 })
 
+$('.cart-content').on("click", ".fas", () => {
+  $('.cart-content').empty()
+  $(".badge").text("0")
+  $(".badge").hide()
+  $("<p>Your cart is empty.</p>").appendTo($('.cart-content'))
+})
+
+$("body").click(function(){
+  $("#myPopup").removeClass("show")
+});
+
+// Prevent events from getting pass .popup
+$(".popup, svg").click(function(e){
+  e.stopPropagation();
+});
+
+$(".badge").hide()
 let slideIndex = 1;
 showSlides(slideIndex);
 
