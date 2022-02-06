@@ -1,11 +1,10 @@
-// Open the Modal
+// Modal - Lightbox
 function openModal() {
   if ($(window).width() <= 500) return;
   $("#myModal").css("display", "block");
   $("header").addClass("ui-state-disabled");
 }
 
-// Close the Modal
 function closeModal() {
   $("#myModal").css("display", "none");
   $("header").removeClass("ui-state-disabled");
@@ -40,6 +39,7 @@ function showSlides(n) {
   $(".images__big").attr("src", url);
 }
 
+// Shopping Cart
 function addToCart(count) {
   $(".badge").text((+$(".badge").text() + count) + "")
   let orderCount = $(".badge").text();
@@ -71,35 +71,6 @@ function addToCart(count) {
   button.appendTo($('.cart-content'));
 }
 
-$(".increase").click(() => {
-  $(".count").text() < 33 &&
-    $(".count").text(+$(".count").text() + 1 + "")
-})
-
-$(".decrease").click(() => {
-  $(".count").text() > 0 &&
-    $(".count").text(+$(".count").text() - 1 + "");
-})
-
-
-$(".images__small").click((e) => {
-  $(".images__small").removeClass("selected")
-  $(e.target).addClass("selected");
-
-  $(".images__big").attr("src", (e.target.src).replace("-thumbnail", ""));
-})
-
-$(".demo").click((e) => {
-  $(".demo").removeClass("selected")
-  $(e.target).addClass("selected");
-})
-
-$(".add").click(() => {
-  let count = +$(".count").text();
-  $(".count").text("0")
-  addToCart(count)
-})
-
 $(".orders").click(() => {
   let popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
@@ -122,6 +93,37 @@ $(".popup, svg").click(function(e){
 });
 
 $(".badge").hide()
+
+// Increase/Decrease buttons
+$(".increase").click(() => {
+  $(".count").text() < 20 &&
+    $(".count").text(+$(".count").text() + 1 + "")
+})
+
+$(".decrease").click(() => {
+  $(".count").text() > 0 &&
+    $(".count").text(+$(".count").text() - 1 + "");
+})
+
+// Control image
+$(".images__small").click((e) => {
+  $(".images__small").removeClass("selected")
+  $(e.target).addClass("selected");
+
+  $(".images__big").attr("src", (e.target.src).replace("-thumbnail", ""));
+})
+
+$(".demo").click((e) => {
+  $(".demo").removeClass("selected")
+  $(e.target).addClass("selected");
+})
+
+$(".add").click(() => {
+  let count = +$(".count").text();
+  $(".count").text("0")
+  addToCart(count)
+})
+
 let slideIndex = 1;
 showSlides(slideIndex);
 

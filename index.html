@@ -11,6 +11,8 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lightbox.css">
+  <link rel="stylesheet" href="mediaQueries.css">
   <script src="./index.js" defer></script>
 
   <!-- JQuery -->
@@ -53,7 +55,6 @@
       </svg>
 
       <div class="popup">
-
         <div class="popuptext" id="myPopup">
           <p>Cart</p>
           <hr>
@@ -63,20 +64,18 @@
         </div>
       </div>
 
-
       <img class="avatar" src="./images/image-avatar.png" alt="avatar">
       <span class="translate-middle badge rounded-pill bg-danger">
         0
       </span>
 
-
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
         aria-controls="navbarOffcanvasLg">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvasLg"
         aria-labelledby="navbarOffcanvasLgLabel">
-
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <ol>
           <li>Collections</li>
@@ -85,20 +84,17 @@
           <li>About</li>
           <li>Contact</li>
         </ol>
-
       </div>
     </nav>
-
   </header>
 
   <main>
-
     <section class="images">
       <img onclick="openModal();" class="images__big" src="./images/image-product-1.jpg" alt="product">
-      
-      <a class="prev tiny" onclick="plusSlides(-1)">&#10094;</a>   
+
+      <a class="prev tiny" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next tiny" onclick="plusSlides(1)">&#10095;</a>
-      
+
       <div class="row">
         <div class="column">
           <img onclick="currentSlide(1)" class="images__small hover-shadow selected"
@@ -179,8 +175,6 @@
         <h6 class="old-price">$250.00</h6>
       </div>
 
-
-
       <div class="buttons">
         <div class="button-group" role="group">
           <label class="decrease">-</label>
@@ -194,7 +188,6 @@
         </button>
       </div>
     </section>
-
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
